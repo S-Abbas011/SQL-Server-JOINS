@@ -1,0 +1,11 @@
+					Joins (10 Questions)
+1. Write a query to display OrderID, CustomerName, and ProductName for all orders.
+2. Display all orders placed by customers who belong to the East region.
+3. Retrieve OrderID, CustomerName, ProductName, Sales, and Profit by joining Customers, Orders, and Products.
+4. Find all customers who have not placed any orders.
+5. For each Region, calculate the total Sales and total Profit.
+6. List the top 5 customers by total Sales amount.
+7. Display pairs of customers who are from the same City.
+8. For each Product Category, find the average Sales per Product.
+9. Retrieve all orders with product details that were shipped in the year 2024.
+10. Find all Categories where the total Profit is negative
