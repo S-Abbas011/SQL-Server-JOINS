@@ -14,7 +14,8 @@ on s.product_id = p.product_id
 ```
 
 ### 2.Display all orders placed by customers who belong to the East region.
-```
+```SQL
+
 Select s.order_id,c.region from sales as s
 join customer as c 
 on s.customer_id = c.customer_id
@@ -23,7 +24,8 @@ where region = 'East'
 
 
 ### 3.Retrieve OrderID, CustomerName, ProductName, Sales, and Profit by joining Customers, Orders, and Products.
-```
+```SQL
+
 Select s.order_id, c.customer_name, p.product_name, 
 s.sales, s.profit
 from sales as s 
