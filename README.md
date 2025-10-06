@@ -3,14 +3,15 @@ select * from customer
 
 ### 1.Write a query to display OrderID, CustomerName, and ProductName for all orders.
 
-'''SQL
+```SQL
+
 Select s.order_id, c.customer_name, p.product_name
  from sales as s
  join customer as c
  on s.customer_id = c.customer_id
  join product as p 
 on s.product_id = p.product_id
-'''
+```
 
 --2.Display all orders placed by customers who belong to the East region.
 Select s.order_id,c.region from sales as s
