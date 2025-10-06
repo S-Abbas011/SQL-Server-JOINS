@@ -13,15 +13,16 @@ Select s.order_id, c.customer_name, p.product_name
 on s.product_id = p.product_id
 ```
 
-###2.Display all orders placed by customers who belong to the East region.
-```Select s.order_id,c.region from sales as s
+### 2.Display all orders placed by customers who belong to the East region.
+```
+Select s.order_id,c.region from sales as s
 join customer as c 
 on s.customer_id = c.customer_id
 where region = 'East'
 ```
 
 
-###3.Retrieve OrderID, CustomerName, ProductName, Sales, and Profit by joining Customers, Orders, and Products.
+### 3.Retrieve OrderID, CustomerName, ProductName, Sales, and Profit by joining Customers, Orders, and Products.
 ```
 Select s.order_id, c.customer_name, p.product_name, 
 s.sales, s.profit
@@ -32,14 +33,14 @@ join product as p
 on s.product_id = p.product_id
 ```
 
-###4.Find all customers who have not placed any orders.
+### 4.Find all customers who have not placed any orders.
 ```
 Select c.customer_name from customer as c
 join sales as s
 on c.customer_id = s.customer_id
 where order_id is null
 ```
-## 5.For each Region, calculate the total Sales and total Profit.
+### 5.For each Region, calculate the total Sales and total Profit.
 ```
 Select sum(s.sales) as total_sales,
 	sum(s.profit) as Total_profit,
@@ -49,7 +50,7 @@ join customer as c
 on s.customer_id = c.customer_id 
 group by region
 ```
-###6.List the top 5 customers by total Sales amount.
+### 6.List the top 5 customers by total Sales amount.
 ```
 select c.customer_name, sum(s.sales) as total_sales
 from customer as c
@@ -61,7 +62,7 @@ limit 5
 ```
 
 
-###8.For each Product Category, find the average Sales per Product.
+### 8.For each Product Category, find the average Sales per Product.
 ```
 select p.category,avg(s.sales) 
 from product as p 
@@ -79,7 +80,7 @@ on p.product_id = s.product_id
 where ship_date  between '2017-01-01' and '2017-12-30'
 order by ship_date
 ```
-###10.Find all Categories where the total Profit is negative.
+### 10.Find all Categories where the total Profit is negative.
 ```
 Select 
 	p.category,
