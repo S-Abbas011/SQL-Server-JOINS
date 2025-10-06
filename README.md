@@ -36,14 +36,14 @@ on s.product_id = p.product_id
 ```
 
 ### 4.Find all customers who have not placed any orders.
-```
+```SQL
 Select c.customer_name from customer as c
 join sales as s
 on c.customer_id = s.customer_id
 where order_id is null
 ```
 ### 5.For each Region, calculate the total Sales and total Profit.
-```
+```SQL
 Select sum(s.sales) as total_sales,
 	sum(s.profit) as Total_profit,
 	c.region 
@@ -53,7 +53,7 @@ on s.customer_id = c.customer_id
 group by region
 ```
 ### 6.List the top 5 customers by total Sales amount.
-```
+```SQL
 select c.customer_name, sum(s.sales) as total_sales
 from customer as c
 join sales as s
@@ -65,7 +65,7 @@ limit 5
 
 
 ### 8.For each Product Category, find the average Sales per Product.
-```
+```SQL
 select p.category,avg(s.sales) 
 from product as p 
 join sales as s
@@ -74,7 +74,7 @@ group by category
 ```
 
 ### 9.Retrieve all orders with product details that were shipped in the year 2024.
-```
+```SQL
 select p.product_id,s.ship_date
 from product as p
 join sales as s
@@ -83,13 +83,14 @@ where ship_date  between '2017-01-01' and '2017-12-30'
 order by ship_date
 ```
 ### 10.Find all Categories where the total Profit is negative.
-```
+
+```SQL
 Select 
 	p.category,
 	sum(s.profit) as total_profit
 from product as p 
 join sales as s 
 on p.product_id = s.product_id
-```
 group by category 
-having sum(s.profit) < 0 
+having sum(s.profit) < 0
+```
